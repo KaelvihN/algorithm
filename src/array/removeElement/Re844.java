@@ -6,42 +6,59 @@ package array.removeElement;
  * @description:比较含退格的字符串
  **/
 public class Re844 {
+    /**
+     *
+     * 双指针
+     * @param s
+     * @param t
+     * @return
+     */
     public boolean backspaceCompare(String s, String t) {
-        boolean flag = true;
         int sIdx = s.length() - 1, tIdx = t.length() - 1;
-        while (true) {
-            if (sIdx >= 0 && s.charAt(sIdx) == '#') {
-                int count = 0;
-                while (sIdx >= 0 && s.charAt(sIdx) == '#') {
-                    count++;
+        int sCount = 0, tCount = 0;
+        while (sIdx >= 0 || tIdx >= 0) {
+            while (sIdx >= 0) {
+                if (s.charAt(sIdx) == '#') {
+                    sCount++;
                     sIdx--;
+                } else if (sCount > 0) {
+                    sCount--;
+                    sIdx--;
+                } else {
+                    break;
                 }
-                sIdx -= count;
             }
-            if (tIdx >= 0 && t.charAt(tIdx) == '#') {
-                int count = 0;
-                while (tIdx >= 0 && t.charAt(tIdx) == '#') {
-                    count++;
+            while (tIdx >= 0) {
+                if (t.charAt(tIdx) == '#') {
+                    tCount++;
                     tIdx--;
+                } else if (tCount > 0) {
+                    tCount--;
+                    tIdx--;
+                } else {
+                    break;
                 }
-                tIdx -= count;
             }
-            if ((sIdx < 0 && tIdx == 0) || (sIdx == 0 && tIdx < 0) || (sIdx >= 0 && tIdx >= 0 && s.charAt(sIdx) != t.charAt(tIdx))) {
-                flag = false;
-                break;
+            if (tIdx >= 0 && sIdx >= 0) {
+                if (s.charAt(sIdx) != t.charAt(tIdx)) {
+                    return false;
+                }
+            } else {
+                if (tIdx >= 0 || sIdx >= 0) {
+                    return false;
+                }
             }
-            sIdx = sIdx >= 0 ? --sIdx : sIdx;
-            tIdx = tIdx >= 0 ? --tIdx : tIdx;
-
+            tIdx--;
+            sIdx--;
         }
-        return flag || (sIdx == -1 && tIdx == -1);
+        return true;
     }
 
     public static void main(String[] args) {
-//        String s = "ab#c", t = "ad#c";
-//        String s = "ab##", t = "c#d#";
+        String s = "ab#c", t = "ad#c";
 //        String s = "a#c", t = "b";
-        String s = "ab##", t = "c#d#";
+//        String s = "ab##", t = "c#d#";
+//        String s = "a##c", t = "#a#c";
         boolean res = new Re844().backspaceCompare(s, t);
         System.out.println("res = " + res);
     }
