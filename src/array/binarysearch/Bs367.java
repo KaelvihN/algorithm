@@ -22,4 +22,9 @@ public class Bs367 {
         return false;
     }
 
+    public static void main(String[] args) {
+        boolean res = new Bs367().isPerfectSquare(5);
+        System.out.println("res = " + res);
+    }
+
 }

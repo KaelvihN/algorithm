@@ -16,4 +16,15 @@ public class Re27 {
         }
         return slow;
     }
+
+    public static void main(String[] args) {
+        /**
+         * {0,1,2,2,3,0,4,2}
+         * 2
+         */
+        int[] nums = {3, 2, 2, 3};
+        int val = 3;
+        int res = new Re27().removeElement(nums, val);
+        System.out.println("res = " + res);
+    }
 }
