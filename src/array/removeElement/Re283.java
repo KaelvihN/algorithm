@@ -1,7 +1,5 @@
 package array.removeElement;
 
-import java.util.Arrays;
-
 /**
  * @author: anran.ma
  * @created: 2024/5/28
@@ -22,11 +20,11 @@ public class Re283 {
 
 
     public static void main(String[] args) {
-        /**
-         * 4,2,4,0,0,3,0,5,1,0
-         * 0,1,0,3,12
-         * 0
-         * 0,1,0,3,12
+        /*
+          4,2,4,0,0,3,0,5,1,0
+          0,1,0,3,12
+          0
+          0,1,0,3,12
          */
         new Re283().moveZeroes(new int[]{0,1,0,3,12});
     }
