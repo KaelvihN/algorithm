@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @author: anran.ma
  * @created: 2024/5/29
- * @description:
+ * @description: 长度最小的子数组
  **/
 public class MSA209 {
     public int minSubArrayLen(int target, int[] nums) {
