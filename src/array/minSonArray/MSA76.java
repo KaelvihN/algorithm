@@ -12,7 +12,7 @@ import java.util.Set;
  **/
 public class MSA76 {
     public static void main(String[] args) {
-        String s = "ADOBECODEBANC", t = "ABC";
+        String s = "ADOBECODEBANC", t = "ABCD";
         System.out.println(new MSA76().minWindow(s, t));
     }
 
