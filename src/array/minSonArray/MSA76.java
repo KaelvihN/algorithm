@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  * @author: anran.ma
  * @created: 2024/6/5
- * @description: 最小覆盖子串
+ * @description: 最小覆盖子串 https://leetcode.cn/problems/minimum-window-substring/description/
  **/
 public class MSA76 {
     public static void main(String[] args) {
@@ -17,35 +17,31 @@ public class MSA76 {
     }
 
     public String minWindow(String s, String t) {
-        if (t.length() > s.length()) {
-            return "";
-        }
-        String res = "";
         Map<Character, Integer> map = new HashMap<>();
-        Set<Character> set = new HashSet<>();
         for (int i = 0; i < t.length(); i++) {
-            map.put(t.charAt(i), map.getOrDefault(t.charAt(i), 0) + 1);
-            set.add(t.charAt(i));
+            char key = t.charAt(i);
+            map.put(key, map.getOrDefault(key, 0) + 1);
         }
-        int slow = 0, fast = 0;
-        while (fast < s.length()) {
-            if (!map.isEmpty()) {
-                Integer times = map.get(s.charAt(fast));
-                if (times != null) {
-                    times -= 1;
-                    if (times == 0) {
-                        map.remove(s.charAt(fast));
-                    } else {
-                        map.put(s.charAt(fast), times);
-                    }
+        int count = map.size();
+        String res = "";
+        for (int slow = 0, fast = 0; fast < s.length(); fast++) {
+            char key = s.charAt(fast);
+            Integer value = map.get(key);
+            if (value == null) {
+                continue;
+            }
+            map.put(key, value - 1);
+            count--;
+            while (count == 0) {
+                res = fast - slow + 1 < res.length() || res.isEmpty() ? s.substring(slow, fast + 1) : res;
+                Integer sValue = map.get(s.charAt(slow));
+                if (sValue == null) {
+                    continue;
                 }
-                fast++;
-            } else {
-                res = s.substring(slow, fast).length() < res.length() || res.isEmpty() ? s.substring(slow, fast) : res;
-                if (set.contains(s.charAt(slow))) {
-                    map.put(s.charAt(slow), 1);
+                map.put(s.charAt(slow), sValue + 1);
+                if (sValue == 0) {
+                    count++;
                 }
-                slow++;
             }
         }
         return res;
