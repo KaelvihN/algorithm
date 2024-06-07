@@ -1,6 +1,5 @@
 package array.minSonArray;
 
-import java.util.Arrays;
 
 /**
  * @author: anran.ma
