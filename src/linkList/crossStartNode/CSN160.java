@@ -26,7 +26,7 @@ public class CSN160 {
         }
         temp = headB;
         while (temp != null) {
-            if (nodeSet.contains(headB)){
+            if (nodeSet.contains(temp)){
                 return temp;
             }
             temp = temp.next;
@@ -34,20 +34,4 @@ public class CSN160 {
         return null;
     }
 
-    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        Set<ListNode> visited = new HashSet<ListNode>();
-        ListNode temp = headA;
-        while (temp != null) {
-            visited.add(temp);
-            temp = temp.next;
-        }
-        temp = headB;
-        while (temp != null) {
-            if (visited.contains(temp)) {
-                return temp;
-            }
-            temp = temp.next;
-        }
-        return null;
-    }
 }
