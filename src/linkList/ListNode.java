@@ -1,4 +1,4 @@
-package linkList.removeEle;
+package linkList;
 
 /**
  * @author: anran.ma
@@ -6,13 +6,13 @@ package linkList.removeEle;
  * @description:
  **/
 public class ListNode {
-    int val;
-    ListNode next;
+    public int val;
+    public ListNode next;
 
-    ListNode() {
+    public ListNode() {
     }
 
-    ListNode(int val) {
+    public ListNode(int val) {
         this.val = val;
     }
 

@@ -1,9 +1,5 @@
 package linkList.designLinkList;
 
-import linkList.removeEle.ListNode;
-
-import javax.swing.text.MutableAttributeSet;
-
 /**
  * @author: anran.ma
  * @created: 2024/6/16

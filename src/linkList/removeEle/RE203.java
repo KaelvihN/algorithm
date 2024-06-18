@@ -1,5 +1,7 @@
 package linkList.removeEle;
 
+import linkList.ListNode;
+
 import java.util.Objects;
 
 /**
