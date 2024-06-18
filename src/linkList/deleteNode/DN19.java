@@ -22,17 +22,17 @@ public class DN19 {
     }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode idx = head;
-        int size = 1;
-        while (idx.next != null) {
+        ListNode res = new ListNode(0, head), idx = res;
+        int size = 0;
+        while (idx != null) {
             size++;
             idx = idx.next;
         }
-        idx = head;
+        idx = res;
         for (int i = 0; i < size - n - 1; i++) {
             idx = idx.next;
         }
         idx.next = idx.next.next;
-        return head;
+        return res;
     }
 }
