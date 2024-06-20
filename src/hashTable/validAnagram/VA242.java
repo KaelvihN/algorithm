@@ -1,40 +1,45 @@
 package hashTable.validAnagram;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author: anran.ma
  * @created: 2024/6/20
- * @description:
+ * @description: 有效的字母异位词 https://leetcode.cn/problems/valid-anagram/description/
  **/
 public class VA242 {
     public static void main(String[] args) {
-
+        String s = "anagram", t = "nagaram";
+//        String s = "rat", t = "car";
+        System.out.println(new VA242().isAnagram(s, t));
     }
 
     /**
-     * a ASCII 97
+     * 数组法
      * @param s
      * @param t
      * @return
      */
     public boolean isAnagram(String s, String t) {
-        return s.length() > t.length() ? validateAnagram(s, t) : validateAnagram(t, s);
-    }
-
-    public boolean validateAnagram(String longStr, String shortStr) {
-        int[] contain = new int[26];
-        for (int i = 0; i < longStr.length(); i++) {
-            contain[longStr.charAt(i) - 'a']++;
+        if (s.length() != t.length()) {
+            return false;
         }
-        for (int i = 0; i < shortStr.length(); i++) {
-            contain[shortStr.charAt(i) - 'a']--;
+        Map<Character, Integer> table = new HashMap<Character, Integer>();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            table.put(ch, table.getOrDefault(ch, 0) + 1);
         }
-        for (int i = 0; i < 26; i++) {
-            if (contain[i] < 0) {
+        for (int i = 0; i < t.length(); i++) {
+            char ch = t.charAt(i);
+            table.put(ch, table.getOrDefault(ch, 0) - 1);
+            if (table.get(ch) < 0) {
                 return false;
             }
         }
         return true;
     }
 }
+
