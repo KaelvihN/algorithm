@@ -1,7 +1,13 @@
 # 算法记录
 
-github: https://github.com/KaelviHN/algorithm
+- github: https://github.com/KaelviHN/algorithm
 
-letcode：https://leetcode.cn/problems/find-all-anagrams-in-a-string/description/
+- letcode：https://leetcode.cn/problems/intersection-of-two-arrays/description/
 
-web：https://programmercarl.com/0242.%E6%9C%89%E6%95%88%E7%9A%84%E5%AD%97%E6%AF%8D%E5%BC%82%E4%BD%8D%E8%AF%8D.html#%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE
+- web：https://programmercarl.com/0349.%E4%B8%A4%E4%B8%AA%E6%95%B0%E7%BB%84%E7%9A%84%E4%BA%A4%E9%9B%86.html#%E7%AE%97%E6%B3%95%E5%85%AC%E5%BC%80%E8%AF%BE
+
+- commit :
+  - finish：完成题目
+  - create：创建题目
+  - update：更新
+  - delete：删除	
