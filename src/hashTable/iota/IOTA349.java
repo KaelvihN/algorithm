@@ -1,4 +1,4 @@
-package linkList.iota;
+package hashTable.iota;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,8 +9,7 @@ import java.util.Set;
 /**
  * @author: anran.ma
  * @created: 2024/6/23
- * @description: 两个数组的交集
- *               https://leetcode.cn/problems/intersection-of-two-arrays/description/
+ * @description: 两个数组的交集 https://leetcode.cn/problems/intersection-of-two-arrays/description/
  **/
 public class IOTA349 {
     public static void main(String[] args) {

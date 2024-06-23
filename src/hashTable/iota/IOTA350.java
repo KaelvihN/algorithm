@@ -1,10 +1,16 @@
-package linkList.iota;
+package hashTable.iota;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+/**
+ * @author: anran.ma
+ * @created: 2024/6/23
+ * @description: 两个数组的交集 II https://leetcode.cn/problems/intersection-of-two-arrays-ii/description/
+ **/
 
 public class IOTA350 {
 
