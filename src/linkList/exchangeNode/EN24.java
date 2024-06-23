@@ -2,8 +2,6 @@ package linkList.exchangeNode;
 
 import linkList.ListNode;
 
-import java.util.List;
-
 /**
  * @author: anran.ma
  * @created: 2024/6/18

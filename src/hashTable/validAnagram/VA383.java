@@ -1,7 +1,5 @@
 package hashTable.validAnagram;
 
-import java.util.Map;
-
 /**
  * @author: anran.ma
  * @created: 2024/6/20
